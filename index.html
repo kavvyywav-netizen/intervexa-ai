@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Practise interviews, improve your answers, and prepare for your dream career with Intervexa AI.">
+
+  <title>Intervexa AI — Your Interview Coach</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <a href="#" class="brand" aria-label="Intervexa AI home">
+        <span class="brand-icon">I<span>.</span></span>
+        <span>intervexa<span class="brand-ai"> AI</span></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard">
+          <span>◈</span> Dashboard
+        </button>
+
+        <button class="nav-item" data-page="interviews">
+          <span>◎</span> Mock interviews
+        </button>
+
+        <button class="nav-item" data-page="resume">
+          <span>▤</span> Resume analyzer
+        </button>
+
+        <button class="nav-item" data-page="questions">
+          <span>▦</span> Question bank
+        </button>
+
+        <button class="nav-item" data-page="progress">
+          <span>↗</span> My progress
+        </button>
+
+        <button class="nav-item" data-page="history">
+          <span>◷</span> Interview history
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="upgrade-card">
+          <div class="upgrade-icon">✦</div>
+          <h3>Your next opportunity starts here.</h3>
+          <p>Build confidence one interview at a time.</p>
+          <button id="quickPractice" class="upgrade-button">
+            Start practising ↗
+          </button>
+        </div>
+
+        <div class="profile">
+          <div class="avatar">K</div>
+          <div class="profile-info">
+            <strong>Future Professional</strong>
+            <span>Free workspace</span>
+          </div>
+          <span class="profile-menu">•••</span>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+          <span class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbTitle">Dashboard</strong></span>
+        </div>
+
+        <div class="topbar-right">
+          <span class="status-dot"></span>
+          <span class="system-status">AI workspace</span>
+          <button class="icon-button" id="themeButton" aria-label="Toggle appearance">◐</button>
+        </div>
+      </header>
+
+      <div class="content" id="pageContent">
+
+        <!-- DASHBOARD -->
+        <section class="page dashboard-page" id="dashboardPage">
+
+          <div class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL INTERVIEW COACH</div>
+              <h1>Prepare for your <span>next big thing.</span></h1>
+              <p class="welcome-description">
+                Every great career begins with one confident answer.
+                Let's practise yours.
+              </p>
+            </div>
+
+            <div class="date-chip"><span>✦</span> YOUR CAREER, YOUR PACE</div>
+          </div>
+
+          <!-- HERO -->
+          <section class="hero-card">
+
+            <div class="hero-glow"></div>
+
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="live-dot"></span>
+                YOUR AI INTERVIEW COACH
+              </div>
+
+              <h2>Confidence isn't<br>born. It's <span>practised.</span></h2>
+
+              <p>
+                Step into a realistic interview experience.
+                Practise your answers, discover your strengths,
+                and learn where you can improve.
+              </p>
+
+              <button class="primary-button" id="startInterview">
+                Start a mock interview <span>↗</span>
+              </button>
+
+              <div class="hero-footnote">
+                <span>✦</span> Your journey to interview readiness starts here
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+
+              <div class="ai-core">
+                <div class="core-inner">
+                  <span class="core-symbol">I<span>.</span></span>
+                </div>
+              </div>
+
+              <div class="floating-tag tag-top">
+                <span class="tag-icon">✦</span>
+                <span><strong>AI Coach</strong><small>Ready to practise</small></span>
+              </div>
+
+              <div class="floating-tag tag-bottom">
+                <span class="tag-icon">↗</span>
+                <span><strong>Your potential</strong><small>Worth discovering</small></span>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- STATS -->
+          <section class="section-block">
+            <div class="section-heading">
+              <div>
+                <h2>Your overview</h2>
+                <p>Your interview journey at a glance.</p>
+              </div>
+              <span class="subtle-label">PERSONAL DASHBOARD</span>
+            </div>
+
+            <div class="stats-grid">
+
+              <article class="stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon purple">◎</span>
+                  <span class="stat-label">PRACTICE SESSIONS</span>
+                </div>
+                <div class="stat-number" id="sessionCount">0</div>
+                <div class="stat-bottom">Every session is progress.</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon blue">↗</span>
+                  <span class="stat-label">AVERAGE SCORE</span>
+                </div>
+                <div class="stat-number"><span id="averageScore">—</span><small id="scoreSuffix"></small></div>
+                <div class="stat-bottom">Based on completed evaluations.</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon green">◈</span>
+                  <span class="stat-label">QUESTIONS ANSWERED</span>
+                </div>
+                <div class="stat-number" id="questionCount">0</div>
+                <div class="stat-bottom">One answer at a time.</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon orange">✦</span>
+                  <span class="stat-label">CAREER READINESS</span>
+                </div>
+                <div class="stat-number"><span id="readinessScore">0</span><small>%</small></div>
+                <div class="readiness-track">
+                  <span id="readinessBar"></span>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- INTERVIEW TYPES -->
+          <section class="section-block">
+            <div class="section-heading">
+              <div>
+                <h2>Choose your interview</h2>
+                <p>Find your focus and start practising.</p>
+              </div>
+              <button class="text-button" data-goto="interviews">View all ↗</button>
+            </div>
+
+            <div class="interview-grid">
+
+              <article class="interview-card">
+                <div class="card-top">
+                  <span class="interview-icon purple">✧</span>
+                  <span class="level-pill">ALL LEVELS</span>
+                </div>
+                <h3>HR interview</h3>
+                <p>Master introductions, strengths, weaknesses, teamwork, and career goals.</p>
+                <div class="card-meta"><span>◷ 10–15 min</span><span>•</span><span>Behavioural</span></div>
+                <button class="card-button" data-interview="HR">Practise HR <span>↗</span></button>
+              </article>
+
+              <article class="interview-card">
+                <div class="card-top">
+                  <span class="interview-icon blue">⌘</span>
+                  <span class="level-pill">SKILL-BASED</span>
+                </div>
+                <h3>Technical interview</h3>
+                <p>Prepare for programming, databases, computer science, and IT fundamentals.</p>
+                <div class="card-meta"><span>◷ 15–30 min</span><span>•</span><span>Technical</span></div>
+                <button class="card-button" data-interview="Technical">Practise technical <span>↗</span></button>
+              </article>
+
+              <article class="interview-card">
+                <div class="card-top">
+                  <span class="interview-icon green">⌘</span>
+                  <span class="level-pill">REAL-WORLD</span>
+                </div>
+                <h3>Behavioural interview</h3>
+                <p>Learn to explain challenges, teamwork, achievements, and problem-solving.</p>
+                <div class="card-meta"><span>◷ 10–20 min</span><span>•</span><span>Situational</span></div>
+                <button class="card-button" data-interview="Behavioural">Practise behavioural <span>↗</span></button>
+              </article>
+
+              <article class="interview-card">
+                <div class="card-top">
+                  <span class="interview-icon orange">✦</span>
+                  <span class="level-pill">PERSONALISED</span>
+                </div>
+                <h3>Resume-based interview</h3>
+                <p>Prepare to explain your projects, experience, skills, and qualifications.</p>
+                <div class="card-meta"><span>◷ 15–20 min</span><span>•</span><span>Personalised</span></div>
+                <button class="card-button" data-interview="Resume">Explore resume prep <span>↗</span></button>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- RECENT ACTIVITY -->
+          <section class="section-block">
+            <div class="section-heading">
+              <div>
+                <h2>Recent activity</h2>
+                <p>Pick up where you left off.</p>
+              </div>
+              <button class="text-button" data-goto="history">View history ↗</button>
+            </div>
+
+            <div class="activity-card" id="recentActivity">
+              <div class="empty-icon">◷</div>
+              <div>
+                <h3>Your journey starts here</h3>
+                <p>Your completed interview sessions will appear here.</p>
+              </div>
+            </div>
+          </section>
+
+          <footer class="footer">
+            <span>INTERVEXA AI</span>
+            <span>Practice smarter. Speak confidently. Get hired.</span>
+          </footer>
+
+        </section>
+
+        <!-- OTHER PAGES ARE RENDERED BY JAVASCRIPT -->
+
+        <section class="page dynamic-page hidden" id="dynamicPage">
+          <div id="dynamicContent"></div>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
